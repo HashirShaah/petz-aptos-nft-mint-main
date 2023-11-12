@@ -36,8 +36,8 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  const connectWalletHandle = async () => {
-    const accounts = await connectWallet();
+  const connectWalletHandle = async (provider="ethereum") => {
+    const accounts = await connectWallet(provider);
     setAccount(accounts);
     if (!isWalletConnected()) {
       connectWalletLocaly();

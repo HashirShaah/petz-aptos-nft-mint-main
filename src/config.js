@@ -1,4 +1,5 @@
 export const ethereum = window.ethereum;
+export const aptos = window.aptos;
 
 
 // check if metamask extension is installed on the browser
@@ -12,8 +13,15 @@ export const isMetaMaskInstalled = () =>{
 
 
 // connect to metakmask wallet
-export const connectWallet = async () =>{
-    const accounts = await ethereum.request({method: 'eth_requestAccounts'});
+export const connectWallet = async (provider="ethereum") =>{
+    var accounts = null;
+    if(provider === 'aptos'){
+        accounts = await aptos.connect();
+
+    }else{
+
+        accounts = await ethereum.request({method: 'eth_requestAccounts'});
+    }
     
     return accounts;
 }

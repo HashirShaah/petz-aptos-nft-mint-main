@@ -3,6 +3,7 @@ import { FiX } from "react-icons/fi";
 import MetamaskModalStyle from "./Metamaskmodal.style";
 import hoverShape from "../../../assets/images/icon/hov_shape_L.svg";
 import metamaskIcon from "../../../assets/images/icon/MetaMask.svg";
+import petraWalletIcon from "../../../assets/images/icon/petra_wallet.svg";
 
 const ConnectWallet = (props) => {
   const { connectWalletModalHanlde } = useModal();
@@ -21,8 +22,12 @@ const ConnectWallet = (props) => {
             </div>
             <div className="modal_body text-center">
               <div className="wallet_list">
-                <a href="# ">
+              <a href="# ">
                   <img src={metamaskIcon} alt="Meta-mask" />
+                  Connect your wallet!
+                </a> 
+                <a href="# ">
+                  <img src={petraWalletIcon} alt="Petra-Wallet" />
                   Connect your wallet!
                 </a>
                 </div>

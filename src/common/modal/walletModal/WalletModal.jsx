@@ -5,15 +5,15 @@ import hoverShape from "../../../assets/images/icon/hov_shape_L.svg";
 import metamaskIcon from "../../../assets/images/icon/MetaMask.svg";
 import formatic from "../../../assets/images/icon/Formatic.svg";
 import trustWalletIcon from "../../../assets/images/icon/Trust_Wallet.svg";
+import petraWalletIcon from "../../../assets/images/icon/petra_wallet.svg";
 import walletConnect from "../../../assets/images/icon/WalletConnect.svg";
 const WalletModal = () => {
   const { walletModalHandle, connectWalletHandle } = useModal();
+
   return (
     <>
       <WalletModalStyleWrapper className="modal_overlay">
-        <div
-          className="mint_modal_box"
-        >
+        <div className="mint_modal_box">
           <div className="mint_modal_content">
             <div className="modal_header">
               <h2>CONNECT WALLET</h2>
@@ -26,7 +26,7 @@ const WalletModal = () => {
                 Please select a wallet to connect for start Minting your NFTs
               </p>
               <div className="wallet_list">
-                <a href="# " onClick={ () => connectWalletHandle() }>
+                <a href="# " onClick={() => connectWalletHandle()}>
                   <img src={metamaskIcon} alt="Meta-mask" />
                   MetaMask
                   <span>
@@ -50,6 +50,19 @@ const WalletModal = () => {
                 <a href="# ">
                   <img src={walletConnect} alt="Wallet" />
                   WalletConnect
+                  <span>
+                    <FiChevronRight />
+                  </span>
+                </a>
+                <a href="# " 
+                    onClick={() => connectWalletHandle('aptos')}
+                    >
+                  <img
+                    style={{ width: 36 }}
+                    src={petraWalletIcon}
+                    alt="petra"
+                  />
+                  Petra Wallet
                   <span>
                     <FiChevronRight />
                   </span>
